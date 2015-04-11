@@ -1,0 +1,25 @@
+@import 'variables';
+@import (reference) 'grid';
+
+// Grid
+.row {
+	&:extend(.clearfix all);
+}
+.column {
+	width: 100%;
+	padding-left: (@gutter / 2);
+	padding-right: (@gutter / 2);
+}
+
+@media only screen and (min-width: 360px) {
+	.column {
+		float: left;
+	}
+	.create-grid(small; 12);
+}
+@media only screen and (min-width: 720px) {
+	.create-grid(medium; 12);
+}
+@media only screen and (min-width: 960px) {
+	.create-grid(large; 12);
+}

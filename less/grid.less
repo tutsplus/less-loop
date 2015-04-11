@@ -1,0 +1,19 @@
+.create-grid(@name; @columns; @index: 1) when (@index =< @columns) {
+  
+  .@{name}-@{index} {
+    width: ( (@index / @columns) * 100% );
+    & when ( @index = @columns ) {
+      float: none;  
+    }
+  }
+  & when ( @index < @columns ) {
+    .push-@{name}-@{index} {
+      margin-left: ( -(@index / @columns) * 100% );
+    }
+    .pull-@{name}-@{index} {
+      margin-left: ( -(@index / @columns) * 100% );
+    }
+  }
+  .create-grid(@name; @columns; (@index + 1));
+
+}
