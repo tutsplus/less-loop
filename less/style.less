@@ -1,26 +1,17 @@
 @import 'variables';
 @import (reference) 'grid';
 
-// @colors : #ED5565, #A0D468, #F6BB42, #5D9CEC;
-// @names  : error, success, attention, info;
-// @length : length(@colors); // 4
+@colors : #ED5565, #A0D468, #F6BB42, #5D9CEC;
+@names  : error, success, attention, info;
+@length : length(@colors); // 4
 
-// .alert-variation(@names; @colors; @length);
+.alert-variation(@names; @colors; @length);
 
-// div {
-// 	color: extract(@colors, 4);
-// }
-
-
-.row {
-	&:extend(.clearfix all);
-}
 .column {
 	width: 100%;
 	padding-left: (@gutter / 2);
 	padding-right: (@gutter / 2);
 }
-
 @media only screen and (min-width: 360px) {
 	.column {
 		float: left;

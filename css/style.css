@@ -1,3 +1,23 @@
+.alert-error {
+  border: #e8273b;
+  color: #99101f;
+  background-color: #ed5565;
+}
+.alert-success {
+  border: #87c940;
+  color: #537f24;
+  background-color: #a0d468;
+}
+.alert-attention {
+  border: #f4a911;
+  color: #986807;
+  background-color: #f6bb42;
+}
+.alert-info {
+  border: #2f80e7;
+  color: #12509e;
+  background-color: #5d9cec;
+}
 .column {
   width: 100%;
   padding-left: 20px;
