@@ -1,7 +1,17 @@
 @import 'variables';
 @import (reference) 'grid';
 
-// Grid
+// @colors : #ED5565, #A0D468, #F6BB42, #5D9CEC;
+// @names  : error, success, attention, info;
+// @length : length(@colors); // 4
+
+// .alert-variation(@names; @colors; @length);
+
+// div {
+// 	color: extract(@colors, 4);
+// }
+
+
 .row {
 	&:extend(.clearfix all);
 }
@@ -15,11 +25,5 @@
 	.column {
 		float: left;
 	}
-	.create-grid(small; 12);
-}
-@media only screen and (min-width: 720px) {
-	.create-grid(medium; 12);
-}
-@media only screen and (min-width: 960px) {
-	.create-grid(large; 12);
+	.grid(small; 12);
 }

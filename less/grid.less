@@ -1,19 +1,34 @@
-.create-grid(@name; @columns; @index: 1) when (@index =< @columns) {
+
+.alert-variation(@names; @colors; @index) when (iscolor(extract(@colors, @index))) and (@index > 0) {
+
+  .alert-variation(@names; @colors; (@index - 1)); // decrement.
+
+  @color : extract(@colors, @index);
+  @name  : extract(@names, @index);
+
+  .alert-@{name} {
+    border: darken(@color, 10%);
+    color: darken(@color, 30%);
+    background-color: @color;
+  }
+  
+}
+
+.grid(@name; @columns; @index: 1) when (@index =< @columns) {
+  
+  .grid(@name; @columns; (@index + 1)); // increment
   
   .@{name}-@{index} {
-    width: ( (@index / @columns) * 100% );
-    & when ( @index = @columns ) {
-      float: none;  
+    width: ( percentage(@index / @columns) );
+    & when ( @index < @columns ) {
+      &:extend(.column);
     }
   }
+
   & when ( @index < @columns ) {
-    .push-@{name}-@{index} {
-      margin-left: ( -(@index / @columns) * 100% );
-    }
-    .pull-@{name}-@{index} {
-      margin-left: ( -(@index / @columns) * 100% );
+    .@{name}-offset-@{index} {
+      margin-left: percentage( (@index / @columns) );
     }
   }
-  .create-grid(@name; @columns; (@index + 1));
 
 }

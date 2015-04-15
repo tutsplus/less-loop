@@ -1,2 +1,2 @@
-#LESS Responsive Grid
-Creating simple responsive grid using LESS loop.
+#LESS Loop
+A couple of example use of [LESS loop](http://lesscss.org/features/#loops-feature).
